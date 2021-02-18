@@ -1,0 +1,49 @@
+{
+  "name": "api-express",
+  "version": "1.0.0",
+  "description": "Node JS and Express based REST API ",
+  "main": "app.js",
+  "scripts": {
+    "start": "APP_NAME=example nodemon app.js",
+    "start:uat": "NODE_ENV=staging node app.js",
+    "start:prod": "AWS_ACCESS_KEY_ID=AKIAWWWOJ6BAIU253A56 AWS_SECRET_ACCESS_KEY=Ep4ZcQ4tJWmWkfVEntjD3fzjocftrCe+oSGTFho1 APP_NAME=example PORT=3000 NODE_ENV=production node app.js",
+    "example": "node test1.js"
+  },
+  "author": "Chanakya Lokam",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "aws-sdk": "^2.720.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^1.4.0",
+    "logform": "^2.2.0",
+    "morgan": "^1.10.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint -f ./test.js --fix --max-warnings 0",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
