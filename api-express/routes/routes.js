@@ -3,7 +3,7 @@ const status = require('http-status-codes');
 
 const router = express.Router();
 
-router.get('/customer', (req, res) => {
+router.get('/customer', (req, res) => {//testing commit
   res.status(status.OK).send('Your have reached the example route');
 });
 
